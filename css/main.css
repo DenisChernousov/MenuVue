@@ -12,23 +12,76 @@
 /* BOOTSTRAP SETTINGS SECTION */
 
 /* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: .625rem; }
-.row, .row > * { --bs-gutter-x: 1.25rem; }
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+	--bs-gutter-x: .625rem;
+}
+
+.row,
+.row>* {
+	--bs-gutter-x: 1.25rem;
+}
 
 /* FONTS LOAD SECTION */
 
-@font-face { src: url("../fonts/roboto-regular-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 400; font-style: normal; }
-@font-face { src: url("../fonts/roboto-italic-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 400; font-style: italic; }
-@font-face { src: url("../fonts/roboto-bold-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 700; font-style: normal; }
-@font-face { src: url("../fonts/roboto-bolditalic-webfont.woff2") format("woff2"); font-family: "roboto-st"; font-weight: 700; font-style: italic; }
+@font-face {
+	src: url("../fonts/roboto-regular-webfont.woff2") format("woff2");
+	font-family: "roboto-st";
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	src: url("../fonts/roboto-italic-webfont.woff2") format("woff2");
+	font-family: "roboto-st";
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	src: url("../fonts/roboto-bold-webfont.woff2") format("woff2");
+	font-family: "roboto-st";
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	src: url("../fonts/roboto-bolditalic-webfont.woff2") format("woff2");
+	font-family: "roboto-st";
+	font-weight: 700;
+	font-style: italic;
+}
 
 /* GENERAL CSS SETTINGS */
 
-::placeholder { color: #666; }
-::selection { background-color: var(--accent); color: #fff; }
-input, textarea { outline: none; }
-input:focus:required:invalid, textarea:focus:required:invalid { border-color: red; }
-input:required:valid, textarea:required:valid { border-color: green; }
+::placeholder {
+	color: #666;
+}
+
+::selection {
+	background-color: var(--accent);
+	color: #fff;
+}
+
+input,
+textarea {
+	outline: none;
+}
+
+input:focus:required:invalid,
+textarea:focus:required:invalid {
+	border-color: red;
+}
+
+input:required:valid,
+textarea:required:valid {
+	border-color: green;
+}
 
 body {
 	font-family: var(--userfont);
@@ -38,30 +91,104 @@ body {
 	min-width: 320px;
 	position: relative;
 	overflow-x: hidden;
-  background-color: #333;
+	background-color: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
+nav {
+	background-color: #585555;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	height: 60px;
+}
+
+ul {
+	align-self: start;
+	background-color: #eee;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 60px;
+	width: 100%;
+}
+
+li {
+	align-items: center;
+	color: #000;
+	cursor: pointer;
+	display: flex;
+	font-size: 1.5em;
+	height: 2em;
+	justify-content: center;
+	list-style-type: none;
+	text-transform: uppercase;
+	transition: all .4s ease;
+}
+
+li:hover {
+	background-color: #585555;
+	color: #AFFFEA;
+}
+
+#app {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	height: 850px;
+
+}
+
+@media(max-width: 1024px) {
+	#app {
+		width: 100vw;
+		height: 100vh;
+	}
+}
+
+.fade-enter-active,
+.fade-leave-acticve {
+	transition: opacity .3s ease;
+}
+.fade-enter,
+.fade-leave-to{
+	opacity: 0;
+}
+.menu, .clear{
+	cursor: pointer;
+	font-size: 3em;
+	padding-left: 5%;
+	transition: all .3s ease;
+	width: 1.5em;
+	color: #fff;
+}
 /* USER STYLES */
 
 @font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
 }
