@@ -2,7 +2,7 @@
 
 :root {
 	--accent: orange;
-	--text: #333;
+	--text: rgb(255, 255, 255);
 	--regular-text: 16px;
 	--lineheight: 1.65;
 	--userfont: roboto-st, sans-serif;
@@ -43,13 +43,25 @@ body {
 
 /* USER STYLES */
 
-.image {
-	max-width: 100%;
-	margin-bottom: var(--bs-gutter-x);
-	border-radius: 4px;
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
 }
 
-.accent {
-	color: var(--accent);
-	font-weight: bold;
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
